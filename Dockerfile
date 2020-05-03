@@ -1,4 +1,4 @@
-FROM phizzl/base:alpine
+FROM phizzl/base:alpine-3.9
 LABEL maintainer "Phizzl <the@phizzl.it>"
 
 RUN sudo apk add --no-cache --virtual .build-deps g++ libffi-dev openssl-dev make && \
