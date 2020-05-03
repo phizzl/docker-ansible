@@ -1,8 +1,7 @@
-FROM phizzl/base:alpine-3.9
+FROM phizzl/base:ubuntu-xenial
 LABEL maintainer "Phizzl <the@phizzl.it>"
 
-RUN sudo apk add --no-cache --virtual .build-deps g++ libffi-dev openssl-dev make && \
-    sudo apk add --no-cache python3-dev && \
-    sudo pip3 --no-cache-dir install --upgrade pip paramiko ansible && \
-    sudo apk del .build-deps
+RUN sudo apt-get install -y python3-pip && \
+    sudo apt-get clean all && \
+    sudo pip3 install paramiko ansible
 
