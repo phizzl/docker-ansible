@@ -1,6 +1,7 @@
-FROM phizzl/base:ubuntu-xenial
+FROM phizzl/base:ubuntu-focal
 LABEL maintainer "Phizzl <the@phizzl.it>"
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y python3-pip libffi-dev libssl-dev && \
     apt-get clean all && \
