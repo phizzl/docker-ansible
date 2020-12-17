@@ -1,9 +1,9 @@
-FROM phizzl/base:ubuntu-focal
+FROM ubuntu:20.04
 LABEL maintainer "Phizzl <the@phizzl.it>"
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get install -y python3-pip libffi-dev libssl-dev && \
+    apt-get install -y git rsync curl wget python3-pip libffi-dev libssl-dev && \
     apt-get clean all && \
     pip3 install paramiko ansible && \
     apt-get purge -y libffi-dev libssl-dev && \
